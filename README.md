@@ -1,13 +1,22 @@
+<div align = "center">
+
+<img src="./images/logo.png" width="100" height="100"></img>
+
+</div>
+
 <h1 align = "center">Snippy</h1>
 
 <p align = "center">Free and Open Source Text Replacement Tool based on Python</p>
+
 
 <div align = "center">
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
-[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)]()
+[![Version](https://img.shields.io/github/v/release/veera2508/sniplet)]()
+[![Stars](https://img.shields.io/github/stars/veera2508/sniplet?style=social)]()
 
 </div>
 
