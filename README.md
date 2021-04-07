@@ -1,5 +1,5 @@
 # Sniplet
-**Powerful Text Editor and Productivity Tool based on Python**
+**Text Editor and Productivity Tool based on Python**
 
 **Licensed under GNU GPL 3**
 
