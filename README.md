@@ -28,11 +28,9 @@ utilization. It is open source and completely works offline with all the files a
 
 ## Features:
 1. Custom Text Expansions
-2. Multi Threading
-3. Background process with low impact
-4. Multi Line expansion support
-5. Custom config files
-6. Easy to install package
+2. Background process with low resource utilization
+3. Multi Line expansion support
+4. Custom config files
 
 ## Installation:
 **Python is required**
