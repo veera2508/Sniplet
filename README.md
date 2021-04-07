@@ -1,5 +1,5 @@
 # Sniplet
-**Text Editor and Productivity Tool based on Python**
+**Free and Open Source Text Replacement Tool based on Python**
 
 **Licensed under GNU GPL 3**
 
