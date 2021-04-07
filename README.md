@@ -74,8 +74,7 @@ Use the following command to get more info about usage and configuration
 
 ## Known Issues:
 1. Threads crashing if ended abruptly
-2. Residual keyboard inputs dumped after aborting (Problem with pynput)
-3. Requires X Server on linux (Not available on some distros)
+2. Residual keyboard inputs dumped after aborting (Problem with MacOS)
 
 
 
