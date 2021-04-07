@@ -48,6 +48,16 @@ utilization. It is open source and completely works offline with all the files a
         python setup.py install
 3. If you don't want Sniplet to be installed globally, it is recommended to create a virtualenv to install it
 
+### Adding Sniplet to the PATH variable on Windows:
+1. The Windows install is slightly different and pip install is recommended
+2. After installing the package find the python install folder with the following command
+   
+         python -c "import os, sys; print(os.path.dirname(sys.executable) + \"\\Scripts\\\")"
+3. Copy this path, add it to the user environment variable path and add to the following command
+         
+         setx PATH "%PATH%;[PathCopied]"
+
+
 ## Configuration:
 1. Run the following command to configure the text replacements
         
