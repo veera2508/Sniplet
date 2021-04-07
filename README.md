@@ -4,7 +4,7 @@
 
 </div>
 
-<h1 align = "center">Snippy</h1>
+<h1 align = "center">Sniplet</h1>
 
 <p align = "center">Free and Open Source Text Replacement Tool based on Python</p>
 
