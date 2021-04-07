@@ -33,7 +33,7 @@ utilization. It is open source and works completely offline.
 
 ## Sample Video:
 
-<img src="./images/Sample.gif" width="440" height="140"></img>
+<img src="./images/Sample.gif" width="660" height="210"></img>
 
 ## Installation:
 **Python is required**
