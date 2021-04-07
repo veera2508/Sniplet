@@ -109,10 +109,12 @@ def create_config_file():
             click.echo("Please choose the correct option!\n")
 
     click.echo("Writing to file {} .....".format(filename))
+
     try:
         os.mkdir("./config-files/")
     except FileExistsError:
         pass
+
     f = open("./config-files/"+filename, "w")
     for i in mappings.keys():
         f.write("Short:\n")

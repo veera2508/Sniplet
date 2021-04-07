@@ -22,8 +22,8 @@
 
 
 ## Description:
-Sniplet is a work in progress tool which can do text replacement globally in any of the 3 major Desktop OSes 
-(Linux, MacOS, Windows). It is a multi-threaded tool which runs quietly in the background with minimal resource 
+Sniplet is a work in progress CLI tool which can do text replacement globally in 
+Linux, MacOS and Windows. It is a multi-threaded tool which runs quietly in the background with minimal resource 
 utilization. It is open source and works completely offline.
 
 ## Features:
@@ -38,7 +38,7 @@ utilization. It is open source and works completely offline.
 
 
 ### Installing using pip:
-      pip install sniplet==1.0.4
+      pip install sniplet==1.0.7
 ### Installing from source:
 1. Download the files from github
 2. Run the following command in the terminal

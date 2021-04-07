@@ -17,7 +17,7 @@
 import click
 from ._snipper import *
 
-__version__ = "1.0.6"
+__version__ = "1.0.7"
 
 
 @click.command()
