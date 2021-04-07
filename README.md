@@ -60,7 +60,7 @@ utilization. It is open source and works completely offline.
 1. Run the following command to configure the text replacements
         
         sniplet --config
-2. Alternatively, you can create your own file with the following specification and save it as a txt file:
+2. Alternatively, you can create your own file with the following specification and save it as a txt file. An example is provided inside config-files
 
         Short:
         [Shortcut name]
@@ -69,11 +69,11 @@ utilization. It is open source and works completely offline.
         ...
 
 ## Usage:
-1. Start Sniplet by using the following command. Replace filepath by the path to your custom file or leave it blank for 
-it to choose the one you created using --config
+1. To start Sniplet just invoke sniplet and mention the config file you want to use (created using --config)
+2. To start Sniplet with your custom file use the following command. Replace filepath by the path to your custom file
    
-        sniplet --start [FILEPATH]
-2. To stop Sniplet use the keyboard interrupt in the terminal
+        sniplet --usrfile [FILEPATH]
+3. To stop Sniplet use the keyboard interrupt in the terminal
 
 ## Help
 Use the following command to get more info about usage and configuration

@@ -17,16 +17,18 @@
 import click
 from ._snipper import *
 
-__version__ = "1.0.5"
+__version__ = "1.0.6"
+
 
 @click.command()
 @click.option('--verbose', is_flag=True, help="Print Verbose Messages")
 @click.option('--config', is_flag=True, help="Configure the Snippets")
 @click.option('--version', is_flag=True, help="Get the version number")
-@click.option('--start', required="false", default="", help="Start the snipper with given config file as filename ("
-                                                            "Follow file "
-                                                            "convention in --help)")
-def main(verbose, config, version, start):
+@click.option('--usrfile', required="false", default="", help="Start the snipper with user defined config file as "
+                                                              "filename ( "
+                                                              "Follow file "
+                                                              "convention in --help)")
+def main(verbose, config, version, usrfile):
     """
     Sniplet
 
@@ -60,8 +62,9 @@ def main(verbose, config, version, start):
 
     click.echo("Licensed under GNU General Public License 3\n")
 
-    if start != "":
-        snip = Snipper(start, verbose)
+    if usrfile != "":
+        snip = Snipper(usrfile, verbose)
+        click.echo("Started Listening!\n")
         snip.run()
 
     elif config:
@@ -70,16 +73,10 @@ def main(verbose, config, version, start):
     elif version:
         click.echo(__version__)
 
-    elif start == "":
+    elif usrfile == "":
         click.echo("Enter the filename you created using config: ")
         filename = input()
-        filename = "./config-files/"+filename
+        filename = "./config-files/" + filename
         snip = Snipper(filename, verbose)
+        click.echo("Started Listening!\n")
         snip.run()
-
-
-
-
-
-
-
