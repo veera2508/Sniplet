@@ -15,7 +15,7 @@
 
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
 [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)]()
-[![Version](https://img.shields.io/github/v/release/veera2508/sniplet)]()
+[![Version](https://img.shields.io/pypi/v/sniplet?label=version)]()
 [![Stars](https://img.shields.io/github/stars/veera2508/sniplet?style=social)]()
 
 </div>
