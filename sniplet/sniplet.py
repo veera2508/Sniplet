@@ -17,7 +17,7 @@
 import click
 from ._snipper import *
 
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 
 @click.command()
 @click.option('--verbose', is_flag=True, help="Print Verbose Messages")
