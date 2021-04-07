@@ -31,6 +31,10 @@ utilization. It is open source and works completely offline.
 2. Background process with low resource utilization
 3. Multi Line expansion support
 
+## Sample Video:
+
+<img src="./images/Sample.gif" width="300" height="300"></img>
+
 ## Installation:
 **Python is required**
 
