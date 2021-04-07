@@ -16,6 +16,7 @@
 """
 
 import click
+import os
 
 
 def read_config_file(filename, verbose):
@@ -108,7 +109,8 @@ def create_config_file():
             click.echo("Please choose the correct option!\n")
 
     click.echo("Writing to file {} .....".format(filename))
-    f = open(filename, "w")
+    os.mkdir("./config-files")
+    f = open("./config-files/"+filename, "w")
     for i in mappings.keys():
         f.write("Short:\n")
         f.write(i + "\n")

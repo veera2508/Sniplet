@@ -2,9 +2,12 @@ Short:
 name;
 Repl:
 abc
-123
 Short:
 email;
 Repl:
 abc@email.com
-456
+Short:
+phone;
+Repl:
+1234567890
+

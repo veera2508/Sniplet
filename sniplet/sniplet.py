@@ -73,6 +73,7 @@ def main(verbose, config, version, start):
     elif start == "":
         click.echo("Enter the filename you created using config: ")
         filename = input()
+        filename = "./config-files/"+filename
         snip = Snipper(filename, verbose)
         snip.run()
 

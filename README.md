@@ -22,22 +22,20 @@
 
 
 ## Description:
-Sniplet is a work in progress tool which can do text replacement globally in any of the 3 major desktop OSes 
+Sniplet is a work in progress tool which can do text replacement globally in any of the 3 major Desktop OSes 
 (Linux, MacOS, Windows). It is a multi-threaded tool which runs quietly in the background with minimal resource 
-utilization. It is open source and completely works offline with all the files accessible to the user.
+utilization. It is open source and works completely offline.
 
 ## Features:
 1. Custom Text Expansions
 2. Background process with low resource utilization
 3. Multi Line expansion support
-4. Custom config files
 
 ## Installation:
 **Python is required**
 
 **Might require admin or su permission to install**
 
-**Add sniplet to the PATH variable**
 
 ### Installing using pip:
       pip install sniplet==1.0.4
@@ -53,7 +51,7 @@ utilization. It is open source and completely works offline with all the files a
 2. After installing the package find the python install folder with the following command
    
          python3 -c "import imp, os; os.chdir(imp.find_module('sniplet')[1]); os.chdir('../'); os.chdir('../'); print(os.getcwd() + '\\Scripts\\')"
-3. Copy this path, add it to the user environment variable path and add to the following command
+3. Copy this path and add to the following command
          
          setx PATH "%PATH%;[PathCopied]"
 
@@ -65,7 +63,7 @@ utilization. It is open source and completely works offline with all the files a
 2. Alternatively, you can create your own file with the following specification and save it as a txt file:
 
         Short:
-        [shortcut name]
+        [Shortcut name]
         Repl:
         [Replacement lines]
         ...
