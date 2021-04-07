@@ -6,7 +6,7 @@
 
 <h1 align = "center">Sniplet</h1>
 
-<p align = "center">Free and Open Source Text Replacement Tool based on Python</p>
+<p align = "center">Free and Open Source Text Replacement Tool</p>
 
 
 <div align = "center">
