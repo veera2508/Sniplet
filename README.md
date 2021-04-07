@@ -1,7 +1,15 @@
-# Sniplet
-**Free and Open Source Text Replacement Tool based on Python**
+<h1 align = "center">Snippy</h1>
 
-**Licensed under GNU GPL 3**
+<p align = "center">Free and Open Source Text Replacement Tool based on Python</p>
+
+<div align = "center">
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html)
+[![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
+</div>
 
 *Version: 1.0.4*
 
