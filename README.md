@@ -53,6 +53,11 @@ it to choose the one you created using --config
         sniplet --start [FILEPATH]
 2. To stop Sniplet use the keyboard interrupt in the terminal
 
+## Help
+Use the following command to get more info about usage and configuration
+      
+      sniplet --help
+
 ## Known Issues:
 1. Threads crashing if ended abruptly
 2. Residual keyboard inputs dumped after aborting (Problem with pynput)
