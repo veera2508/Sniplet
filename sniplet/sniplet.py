@@ -17,7 +17,7 @@
 import click
 from ._snipper import *
 
-__version__ = "1.0.0"
+__version__ = "1.0.4"
 
 @click.command()
 @click.option('--verbose', is_flag=True, help="Print Verbose Messages")
@@ -69,5 +69,16 @@ def main(verbose, config, version, start):
 
     elif version:
         click.echo(__version__)
+
+    elif start == "":
+        click.echo("Enter the filename you created using config: ")
+        filename = input()
+        snip = Snipper(filename, verbose)
+        snip.run()
+
+
+
+
+
 
 

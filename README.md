@@ -3,7 +3,7 @@
 
 **Licensed under GNU GPL 3**
 
-*Version: 1.0.0*
+*Version: 1.0.4*
 
 ## Description:
 Sniplet is a work in progress tool which can do text replacement globally in any of the 3 major desktop OSes 
@@ -26,7 +26,7 @@ utilization. It is open source and completely works offline with all the files a
 **Add sniplet to the PATH variable**
 
 ### Installing using pip:
-      pip install sniplet
+      pip install sniplet==1.0.4
 ### Installing from source:
 1. Download the files from github
 2. Run the following command in the terminal

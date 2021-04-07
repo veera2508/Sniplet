@@ -108,7 +108,7 @@ def create_config_file():
             click.echo("Please choose the correct option!\n")
 
     click.echo("Writing to file {} .....".format(filename))
-    f = open("../config-files/" + filename, "w")
+    f = open(filename, "w")
     for i in mappings.keys():
         f.write("Short:\n")
         f.write(i + "\n")

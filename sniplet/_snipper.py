@@ -67,13 +67,16 @@ class Snipper:
                         click.echo("Replacing {} with {}".format(curstr, self.mappings[curstr]))
                     for i in range(len(curstr) + 1):
                         self.kb.press(Key.backspace)
+                        self.kb.release(key.backspace)
                     for i in range(len(self.mappings[curstr])):
                         self.kb.type(self.mappings[curstr][i])
                     self.kb.press(Key.backspace)
+                    self.kb.release(key.backspace)
                     self.kb.press(Key.space)
+                    self.kb.release(key.space)
                     self.current_input = []
                 self.current_input = []
-            elif (key == Key.backspace and self.current_input):
+            elif key == Key.backspace and self.current_input:
                 self.current_input.pop()
 
     def on_release(self, key):
