@@ -52,7 +52,7 @@ utilization. It is open source and completely works offline with all the files a
 1. The Windows install is slightly different and pip install is recommended
 2. After installing the package find the python install folder with the following command
    
-         python -c "import os, sys; print(os.path.dirname(sys.executable) + \"\\Scripts\\\")"
+         python3 -c "import os, sys; print(os.path.dirname(sys.executable) + '\\Scripts\\')"
 3. Copy this path, add it to the user environment variable path and add to the following command
          
          setx PATH "%PATH%;[PathCopied]"
