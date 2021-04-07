@@ -20,7 +20,6 @@
 
 </div>
 
-*Version: 1.0.4*
 
 ## Description:
 Sniplet is a work in progress tool which can do text replacement globally in any of the 3 major desktop OSes 
