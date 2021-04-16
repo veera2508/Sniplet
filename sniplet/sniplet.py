@@ -15,7 +15,7 @@
     along with Sniplet.  If not, see <https://www.gnu.org/licenses/>.
     """
 import click
-from ._snipper import *
+from ._klistener import *
 
 __version__ = "1.0.7"
 
@@ -63,9 +63,9 @@ def main(verbose, config, version, usrfile):
     click.echo("Licensed under GNU General Public License 3\n")
 
     if usrfile != "":
-        snip = Snipper(usrfile, verbose)
+        klistener = KListener(usrfile, verbose)
         click.echo("Started Listening!\n")
-        snip.run()
+        klistener.run()
 
     elif config:
         create_config_file()
@@ -77,6 +77,6 @@ def main(verbose, config, version, usrfile):
         click.echo("Enter the filename you created using config: ")
         filename = input()
         filename = "./config-files/" + filename
-        snip = Snipper(filename, verbose)
+        klistener = KListener(filename, verbose)
         click.echo("Started Listening!\n")
-        snip.run()
+        klistener.run()
