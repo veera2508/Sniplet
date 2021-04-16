@@ -58,8 +58,8 @@ class KListener:
             self.running = False
             if key == Key.space:
                 self.snipper.replace()
-            elif key == Key.backspace and self.current_input:
-                self.current_input.pop()
+            elif key == Key.backspace and self.snipper.current_input:
+                self.snipper.current_input.pop()
 
     def on_release(self, key):
         """

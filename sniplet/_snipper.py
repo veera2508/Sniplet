@@ -25,7 +25,7 @@ class Snipper:
         self.cfile = filename
         self.verbose = verbose
         map = read_config_file(filename, verbose)
-        self.mapping = map
+        self.mappings = map
         self.kb = Controller()
         self.keys = set(map.keys())
         self.current_input = []
