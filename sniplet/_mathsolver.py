@@ -14,3 +14,23 @@
     You should have received a copy of the GNU General Public License
     along with Sniplet.  If not, see <https://www.gnu.org/licenses/>.
 """
+
+
+
+class MathSolver:
+    def __init__(self, verbose=False):
+        self.buffer = []
+        self.verbose = verbose
+        self.listening = False
+
+    def run(self):
+        res = self.mathsolver.run()
+        kb = Controller()
+        if self.verbose:
+            click.echo("Result is: ", res)
+        self.listener.stop()
+        self.running = False
+        for i in range(len(self.buffer) + 1):
+            kb.press(Key.backspace)
+            kb.release(Key.backspace)
+        kb.type(res)

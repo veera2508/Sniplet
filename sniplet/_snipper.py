@@ -16,9 +16,9 @@
 """
 
 from ._helper import *
-from pynput import keyboard
 from pynput.keyboard import Key, Controller
 import click
+
 
 class Snipper:
     def __init__(self, filename, verbose):
@@ -26,26 +26,24 @@ class Snipper:
         self.verbose = verbose
         map = read_config_file(filename, verbose)
         self.mappings = map
-        self.kb = Controller()
         self.keys = set(map.keys())
-        self.current_input = []
+        self.buffer = []
         self.curstr = ""
 
     def replace(self):
-        self.curstr = ''.join([str(elem) for elem in self.current_input])
+        kb = Controller()
+        self.curstr = ''.join([str(elem) for elem in self.buffer])
         if self.verbose:
-            print(self.curstr)
+            click.echo(self.curstr)
         if self.curstr in self.keys:
             if self.verbose:
-                click.echo("Replacing {} with {}".format(self.curstr, self.mappings[curstr]))
+                click.echo("Replacing {} with {}".format(self.curstr, self.mappings[self.curstr]))
             for i in range(len(self.curstr) + 1):
-                self.kb.press(Key.backspace)
-                self.kb.release(Key.backspace)
+                kb.press(Key.backspace)
+                kb.release(Key.backspace)
             for i in range(len(self.mappings[self.curstr])):
-                self.kb.type(self.mappings[self.curstr][i])
-            self.kb.press(Key.backspace)
-            self.kb.release(Key.backspace)
-            self.kb.press(Key.space)
-            self.kb.release(Key.space)
-            self.current_input = []
-        self.current_input = []
+                kb.type(self.mappings[self.curstr][i])
+            kb.press(Key.backspace)
+            kb.release(Key.backspace)
+            kb.press(Key.space)
+            kb.release(Key.space)

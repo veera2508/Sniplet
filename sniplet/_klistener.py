@@ -15,11 +15,9 @@
     along with Sniplet.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-from ._helper import *
 from pynput import keyboard
-from pynput.keyboard import Key, Controller
-import click
 from ._snipper import *
+from ._mathsolver import MathSolver
 
 
 class KListener:
@@ -42,6 +40,9 @@ class KListener:
         self.listener = 0
         self.verbose = verbose
         self.snipper = Snipper(filename, verbose)
+        self.mathsolver = MathSolver(verbose)
+        self.current = set()
+        self.kb = Controller()
 
     def on_press(self, key):
         """
@@ -52,14 +53,21 @@ class KListener:
                 bool: Stop or continue listening
         """
         try:
-            self.snipper.current_input.append(key.char)
+            if key.char == "=":
+                if self.mathsolver
+                self.mathsolver.listening = True
+            if self.mathsolver.listening:
+                self.mathsolver.buffer.append(key.char)
+            self.snipper.buffer.append(key.char)
         except AttributeError:
             self.listener.stop()
             self.running = False
             if key == Key.space:
                 self.snipper.replace()
-            elif key == Key.backspace and self.snipper.current_input:
-                self.snipper.current_input.pop()
+                self.mathsolver.buffer = []
+                self.snipper.buffer = []
+            elif key == Key.backspace and self.snipper.buffer:
+                self.snipper.buffer.pop()
 
     def on_release(self, key):
         """
@@ -69,6 +77,10 @@ class KListener:
                 Returns:
                     bool: Stop or continue listening
         """
+        try:
+            self.current.remove(key)
+        except KeyError:
+            pass
         if key == Key.esc:
             self.lis = False
             self.running = False
@@ -81,11 +93,11 @@ class KListener:
         self.running = False
         self.listener = keyboard.Listener(on_press=lambda event: self.on_press(event),
                                           on_release=lambda event: self.on_release(event))  # Creating a listener
-        while self.lis: # Main Loop
+        while self.lis:  # Main Loop
             if not self.running:
                 self.listener.stop()
                 self.listener = keyboard.Listener(on_press=lambda event: self.on_press(event),
-                                                  on_release=lambda event: self.on_release(event)) # Start new listener
+                                                  on_release=lambda event: self.on_release(event))  # Start new listener
                 self.running = True
-                self.listener.start() # Starting the thread
-                self.listener.join() # Joining the threads in a blocking way
+                self.listener.start()  # Starting the thread
+                self.listener.join()  # Joining the threads in a blocking way
