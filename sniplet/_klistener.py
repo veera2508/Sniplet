@@ -53,8 +53,7 @@ class KListener:
                 bool: Stop or continue listening
         """
         try:
-            if key.char == "=":
-                if self.mathsolver
+            if key.char == "":
                 self.mathsolver.listening = True
             if self.mathsolver.listening:
                 self.mathsolver.buffer.append(key.char)
