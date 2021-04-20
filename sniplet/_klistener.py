@@ -18,6 +18,7 @@
 from pynput import keyboard
 from ._snipper import *
 from ._mathsolver import MathSolver
+from pynput.keyboard import Key, Controller
 
 
 class KListener:
@@ -41,6 +42,7 @@ class KListener:
         self.verbose = verbose
         self.snipper = Snipper(filename, verbose)
         self.mathsolver = MathSolver(verbose)
+        self.buffer = []
         self.current = set()
         self.kb = Controller()
 
@@ -53,20 +55,26 @@ class KListener:
                 bool: Stop or continue listening
         """
         try:
-            if key.char == "":
-                self.mathsolver.listening = True
-            if self.mathsolver.listening:
-                self.mathsolver.buffer.append(key.char)
-            self.snipper.buffer.append(key.char)
+            self.buffer.append(key.char)
         except AttributeError:
             self.listener.stop()
             self.running = False
-            if key == Key.space:
-                self.snipper.replace()
-                self.mathsolver.buffer = []
-                self.snipper.buffer = []
-            elif key == Key.backspace and self.snipper.buffer:
-                self.snipper.buffer.pop()
+            if key == Key.space and self.buffer:
+                result, flag = self.processbuffer()
+                if result:
+                    for i in range(len(self.buffer) + 1):
+                        self.kb.press(Key.backspace)
+                        self.kb.release(Key.backspace)
+                    for i in range(len(result)):
+                        self.kb.type(result[i])
+                    if flag:
+                        self.kb.press(Key.backspace)
+                        self.kb.release(Key.backspace)
+                    self.kb.press(Key.space)
+                    self.kb.release(Key.space)
+                self.buffer = []
+            elif key == Key.backspace and self.buffer:
+                self.buffer.pop()
 
     def on_release(self, key):
         """
@@ -76,10 +84,6 @@ class KListener:
                 Returns:
                     bool: Stop or continue listening
         """
-        try:
-            self.current.remove(key)
-        except KeyError:
-            pass
         if key == Key.esc:
             self.lis = False
             self.running = False
@@ -100,3 +104,9 @@ class KListener:
                 self.running = True
                 self.listener.start()  # Starting the thread
                 self.listener.join()  # Joining the threads in a blocking way
+
+    def processbuffer(self):
+        if self.buffer[0] == "=" and self.buffer[-1] == "=":
+            return ["0"], 0
+        else:
+            return self.snipper.replace(self.buffer), 1

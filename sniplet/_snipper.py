@@ -16,7 +16,6 @@
 """
 
 from ._helper import *
-from pynput.keyboard import Key, Controller
 import click
 
 
@@ -27,23 +26,15 @@ class Snipper:
         map = read_config_file(filename, verbose)
         self.mappings = map
         self.keys = set(map.keys())
-        self.buffer = []
         self.curstr = ""
 
-    def replace(self):
-        kb = Controller()
-        self.curstr = ''.join([str(elem) for elem in self.buffer])
+    def replace(self, buffer):
+        self.curstr = ''.join([str(elem) for elem in buffer])
         if self.verbose:
             click.echo(self.curstr)
         if self.curstr in self.keys:
             if self.verbose:
                 click.echo("Replacing {} with {}".format(self.curstr, self.mappings[self.curstr]))
-            for i in range(len(self.curstr) + 1):
-                kb.press(Key.backspace)
-                kb.release(Key.backspace)
-            for i in range(len(self.mappings[self.curstr])):
-                kb.type(self.mappings[self.curstr][i])
-            kb.press(Key.backspace)
-            kb.release(Key.backspace)
-            kb.press(Key.space)
-            kb.release(Key.space)
+            return self.mappings[self.curstr]
+        else:
+            return []
